@@ -4,9 +4,37 @@
 import unittest
 
 
+# Frequencies
+# 2 if we can create both strings without re-using characters
+# 1 can create either string without re-using characters
+# 0 if we cannot create either string without re-using characters
 def create_strings_from_characters(frequencies, string1, string2):
-    # Write your code here.
-    pass
+    chart1 = {}
+    chart2 = {}
+    combined = {}
+    for char in string1:
+        chart1[char] = chart1.get(char, 0) + 1
+        combined[char] = combined.get(char, 0) + 1
+
+    for char in string2:
+        chart2[char] = chart2.get(char, 0) + 1
+        combined[char] = combined.get(char, 0) + 1
+
+    if can_first_dict_support_second_dict(frequencies, combined):
+        return 2
+    elif can_first_dict_support_second_dict(
+        frequencies, chart1
+    ) or can_first_dict_support_second_dict(frequencies, chart2):
+        return 1
+    else:
+        return 0
+
+
+def can_first_dict_support_second_dict(dic1, dic2):
+    for key, value in dic2.items():
+        if value > dic1.get(key, 0):
+            return False
+    return True
 
 
 class TestProgram(unittest.TestCase):
