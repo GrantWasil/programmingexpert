@@ -16,7 +16,7 @@ class TestProgram(unittest.TestCase):
         string2 = "world"
         expected = 1
         self.assertEqual(
-            program.create_strings_from_characters(frequencies, string1, string2),
+            create_strings_from_characters(frequencies, string1, string2),
             expected,
         )
 
@@ -26,7 +26,7 @@ class TestProgram(unittest.TestCase):
         string2 = "world"
         expected = 1
         self.assertEqual(
-            program.create_strings_from_characters(frequencies, string1, string2),
+            create_strings_from_characters(frequencies, string1, string2),
             expected,
         )
 
@@ -36,7 +36,7 @@ class TestProgram(unittest.TestCase):
         string2 = "bbccde"
         expected = 2
         self.assertEqual(
-            program.create_strings_from_characters(frequencies, string1, string2),
+            create_strings_from_characters(frequencies, string1, string2),
             expected,
         )
 
@@ -46,7 +46,7 @@ class TestProgram(unittest.TestCase):
         string2 = "bbccde"
         expected = 0
         self.assertEqual(
-            program.create_strings_from_characters(frequencies, string1, string2),
+            create_strings_from_characters(frequencies, string1, string2),
             expected,
         )
 
@@ -56,7 +56,7 @@ class TestProgram(unittest.TestCase):
         string2 = "bbccde"
         expected = 0
         self.assertEqual(
-            program.create_strings_from_characters(frequencies, string1, string2),
+            create_strings_from_characters(frequencies, string1, string2),
             expected,
         )
 
@@ -66,7 +66,7 @@ class TestProgram(unittest.TestCase):
         string2 = ""
         expected = 2
         self.assertEqual(
-            program.create_strings_from_characters(frequencies, string1, string2),
+            create_strings_from_characters(frequencies, string1, string2),
             expected,
         )
 
@@ -76,7 +76,7 @@ class TestProgram(unittest.TestCase):
         string2 = ""
         expected = 2
         self.assertEqual(
-            program.create_strings_from_characters(frequencies, string1, string2),
+            create_strings_from_characters(frequencies, string1, string2),
             expected,
         )
 
